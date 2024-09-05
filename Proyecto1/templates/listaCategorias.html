@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planilla de productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LISTA PRODUCTOS PAGINA</h1>
+    </header>
+    <main>
+        <p>LISTADO DE PRODUCTOS:.</p>
+        <p>Productos: </p>
+        <p>{% for categoria in  categorias%}</p>
+            <p><strong>{{categoria.name}}</strong></p>
+            {% endfor %}
+            <p><strong>Cantidad de categorias:{{cantidad}}</strong></p>
+            <br>
+        
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Mi Proyecto</p>
+    </footer>
+</body>
+</html>
