@@ -30,6 +30,7 @@ urlpatterns = [
     path('context/', pruebaTemplateContext),
     path('App/', include('App.urls')),
     path('',index),
+    path('Orders/', include('Orders.urls')),
 ]
 
 
