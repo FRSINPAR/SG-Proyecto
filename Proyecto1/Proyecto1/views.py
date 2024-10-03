@@ -8,9 +8,12 @@ def pruebaView(request):
     
     return HttpResponse("prueba de vista")
 #-------------------------------
-def inicio(request):
+def documents(request):
     
-    return HttpResponse(f"INICIO - HOME - fecha: {fechaActual()}")
+    context = {
+        "fechaActual" : fechaActual(),
+        }
+    return render(request, 'documents.html', context)
 #-------------------------------
 def fechaActual():
 

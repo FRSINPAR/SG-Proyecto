@@ -23,7 +23,7 @@ from .views import * #IMPORTANDO VIEW DESDE LA APP
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pruebaView/', pruebaView),
-    path('inicio/', inicio),
+    path('inicio/', documents),
     path('inicio/consulta/<int:edad>', consulta),
     path('vistaTemplate/', viewTemplate),
     path('testeandoHtml/', testeandoHtml),
