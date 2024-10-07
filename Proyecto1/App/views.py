@@ -5,12 +5,12 @@ from App.models import Products #IMPORTO EL MODELO DE LA APLICACION (APP)
 from App.models import Category #IMPORTO EL MODELO DE LA APLICACION (APP)
 import random
 # Create your views here.
-#_________________________________
-def inicioApp(request):
-    
 
-    # Datos para crear productos
-    nombres = [
+#_________________________________
+
+def inicioApp(request): # Datos para crear productos
+    
+    nombres = [ 
         "Rollo de cocina", "Rollo de papel", "Servilletas", "Toalla de cocina",
         "Papel aluminio", "Papel encerado", "Bolsas de plástico", "Papel higiénico",
         "Esponjas", "Limpiador multiusos", "Jabón para platos", "Desinfectante",
@@ -33,10 +33,11 @@ def fechaActualApp():
 
     hoy = datetime.now().strftime("%d/%m/%Y - %H:%M:%S")
     return hoy
+
 #_________________________________
 
 def lista_productos(request):
-
+    
     all_products = Products.objects.all()
     cantidad = len(all_products)
     for producto in all_products:
@@ -55,7 +56,7 @@ def sort_lista_productos(request):
         'cantidad':cantidadDeProductos
             }
     return render(request, 'lista_productos.html', context )
-
+#__________________________________
 def listar_categorias(request):
 
     all_cateogrias = Category.objects.all().order_by('name')
