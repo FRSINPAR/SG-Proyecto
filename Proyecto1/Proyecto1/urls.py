@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import * #IMPORTANDO VIEW DESDE LA APP
 
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -31,7 +33,7 @@ urlpatterns = [
     path('App/', include('App.urls')),
     path('',index),
     path('Orders/', include('Orders.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 
