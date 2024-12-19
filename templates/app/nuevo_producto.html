@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Documentos
+{% endblock %}
+{% block main %}
+
+    {{fechaActual}}
+    {% if request.method == 'GET' %}
+        <form action="" method="post">
+            {% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+                
+            <!---<p>Disponibilidad: <input type="checkbox" name="stock"></p> --->
+
+            <input  type="submit" value="Crear Producto">
+
+        </form>
+    {% else %}
+        <p>producto creado</p>
+    {% endif %}
+{% endblock %}

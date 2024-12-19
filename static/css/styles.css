@@ -1,0 +1,40 @@
+/* Estilo general */
+
+/* Si el contenedor principal es más grande que la ventana */
+.container {
+    overflow-x: auto;
+}
+
+/* Permitir desplazamiento vertical de la página */
+body, html {
+    overflow-y: auto;
+}
+
+/* Barra lateral con límite de altura y desplazamiento */
+.nav-pills {
+    max-height: 100vh; /* Limita la altura máxima del menú a la altura de la pantalla */
+    overflow-y: auto; /* Agrega desplazamiento si es necesario */
+    -webkit-overflow-scrolling: touch; /* Suaviza el desplazamiento en iOS */
+    touch-action: pan-y; /* Asegura el desplazamiento vertical en dispositivos táctiles */
+}
+
+/* Ajustes específicos para dispositivos móviles */
+@media (max-width: 767px) {
+    .nav-pills {
+        max-height: none; /* Permite que se extienda más allá de la altura de la pantalla */
+    }
+
+    /* Evitar restricciones horizontales innecesarias */
+    .container {
+        overflow-x: auto; /* Mantén el desplazamiento horizontal si es necesario */
+        
+    }
+}
+
+/* Ajustes para pantallas grandes (opcional) */
+@media (min-width: 768px) {
+    /* Solo esconder desplazamiento horizontal en pantallas grandes */
+    body, html {
+        overflow-x: hidden;
+    }
+}

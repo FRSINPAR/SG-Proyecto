@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block title %}
+Inicio
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- Menú lateral -->
+        
+        <nav class="col-12 col-md-2 bg-dark text-white p-3 d-md-block d-none vh-100">
+            <a href="#" class="text-decoration-none text-white fs-4 mb-3 d-block">SGI</a>
+            <ul class="nav nav-pills flex-column" style="flex-grow: 1; overflow-y: auto;">
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'manual-y-politica' %}" class="nav-link text-white">Manual y Política</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'certificados' %}" class="nav-link text-white">Certificados</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'procedimientos-generales' %}" class="nav-link text-white">Procedimientos Generales</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'practicas-operativas' %}" class="nav-link text-white">Prácticas Operativas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'registros' %}" class="nav-link text-white">Registros</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'planes' %}" class="nav-link text-white">Planes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'normas' %}" class="nav-link text-white">Normas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'hojas-de-seguridad' %}" class="nav-link text-white">Hojas de seguridad</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'descripcion-de-procesos' %}" class="nav-link text-white">Descripción de Procesos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'analisis-de-aspectos-e-impactos-ambientales' %}" class="nav-link text-white">Análisis de Aspectos e impactos ambientales</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'pasos-individuales' %}" class="nav-link text-white">Pasos Individuales</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'identificacion-de-peligro' %}" class="nav-link text-white">Identificación de Peligro</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'trabajo-seguro' %}" class="nav-link text-white">Trabajo Seguro</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'especificaciones-tecnicas' %}" class="nav-link text-white">Especificaciones Técnicas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'materiales' %}" class="nav-link text-white">Materiales</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'inventario-marketing' %}" class="nav-link text-white">Inventario Marketing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'plantillas' %}" class="nav-link text-white">Plantillas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'documentos_filtrados' 'etcs' %}" class="nav-link text-white">ETCs</a>
+                </li>
+                <li class="nav-item"><a href="http://intranet:85/acceso.asp" class="nav-link text-grey">Extranet</a></li>
+                <li class="nav-item"><a href="https://www.sinpar.com.ar" class="nav-link text-grey">Sitio Oficial</a></li>
+            </ul>
+        </nav>
+
+         <!-- Menú móvil -->
+         <nav class="navbar navbar-dark bg-dark d-md-none">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mobileMenu">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'manual-y-politica' %}" class="nav-link text-white">Manual y Política</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'certificados' %}" class="nav-link text-white">Certificados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'procedimientos-generales' %}" class="nav-link text-white">Procedimientos Generales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'practicas-operativas' %}" class="nav-link text-white">Prácticas Operativas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'registros' %}" class="nav-link text-white">Registros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'planes' %}" class="nav-link text-white">Planes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'normas' %}" class="nav-link text-white">Normas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'hojas-de-seguridad' %}" class="nav-link text-white">Hojas de seguridad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'descripcion-de-procesos' %}" class="nav-link text-white">Descripción de Procesos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'analisis-de-aspectos-e-impactos-ambientales' %}" class="nav-link text-white">Análisis de Aspectos e impactos ambientales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'pasos-individuales' %}" class="nav-link text-white">Pasos Individuales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'identificacion-de-peligro' %}" class="nav-link text-white">Identificación de Peligro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'trabajo-seguro' %}" class="nav-link text-white">Trabajo Seguro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'especificaciones-tecnicas' %}" class="nav-link text-white">Especificaciones Técnicas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'materiales' %}" class="nav-link text-white">Materiales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'inventario-marketing' %}" class="nav-link text-white">Inventario Marketing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'plantillas' %}" class="nav-link text-white">Plantillas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'documentos_filtrados' 'etcs' %}" class="nav-link text-white">ETCs</a>
+                    </li>
+                    <li class="nav-item"><a href="http://intranet:85/acceso.asp" class="nav-link text-grey">Extranet</a></li>
+                    <li class="nav-item"><a href="https://www.sinpar.com.ar" class="nav-link text-grey">Sitio Oficial</a></li>
+                    <!-- Repetir cada elemento aquí también, como en el menú lateral -->
+                </ul>
+            </div>
+        </nav>
+
+
+        <!-- Contenido principal -->
+        <div class="col-md-10 p-4">
+            
+            <h3>Documentos: {{ tipo }}</h3>
+            <table id="documentTable" class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Rev</th>
+                        <th>Vigencia</th>
+                        <th>PDF</th>
+                        <th>XLS</th>
+                        <th>DOC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for documento in documentos %}
+                    <tr>
+                        <td>{{ documento.codigo }}</td>
+                        <td>{{ documento.descripcion }}</td>
+                        <td>{{ documento.revision }}</td>
+                        <td>{{ documento.vigencia|date:"d/m/y" }}</td>
+                        <td><a href="{{ documento.linkpdf }}" class="btn btn-link"><i class="bi bi-file-earmark-pdf"></i></a></td>
+                        <td><a href="{{ documento.linkxls }}" class="btn btn-link"><i class="bi bi-file-earmark-excel"></i></a></td>
+                        <td><a href="{{ documento.linkdoc }}" class="btn btn-link"><i class="bi bi-file-earmark-word"></i></a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

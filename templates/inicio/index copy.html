@@ -1,0 +1,108 @@
+<!-- VER........................
+Para lograr un diseño similar a lo que se hacía con <frameset>, pero con técnicas modernas y compatibles, podemos usar CSS Grid o Flexbox. Estas tecnologías te permiten dividir la página en áreas específicas, como un menú a la izquierda y el contenido principal a la derecha, manteniendo una estructura dinámica y accesible.
+
+    Código adaptado con Flexbox:
+    Aquí tienes el ejemplo de cómo implementar un menú de navegación a la izquierda con un contenido dinámico a la derecha: -->
+
+
+{% extends "base.html" %}
+
+{% block title %}
+Documentos
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- Menú lateral -->
+        <nav class="col-md-2 bg-dark text-white vh-100 d-flex flex-column p-3">
+            <h3 class="text-white">SINPAR</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="/manual/" class="nav-link text-white">Manual y Política</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/certificados/" class="nav-link text-white">Certificados</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/procedimientos/" class="nav-link text-white">Procedimientos Generales</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="col-md-10 p-4">
+            <h3 class="h3"> Documentos </h3>
+
+            <table id="documentTable" class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Rev</th>
+                        <th>Vigencia</th>
+                        <th>PDF</th>
+                        <th>XLS</th>
+                        <th>DOC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Ejemplo de fila -->
+                    <tr>
+                        <td>IP-ADM-4-3-02</td>
+                        <td>Identificación de Peligro...</td>
+                        <td>4</td>
+                        <td>05/12/2011</td>
+                        <td><a href="{% url 'ruta_pdf' %}" class="btn btn-link"><i class="bi bi-file-earmark-pdf"></i></a></td>
+                        <td><a href="{% url 'ruta_xls' %}" class="btn btn-link"><i class="bi bi-file-earmark-excel"></i></a></td>
+                        <td><a href="{% url 'ruta_doc' %}" class="btn btn-link"><i class="bi bi-file-earmark-word"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</div>
+
+<script>
+    // Inicializar DataTables
+    $(document).ready(function() {
+        $('#documentTable').DataTable();
+    });
+</script>
+{% endblock %}
+
+<!-- Explicación del código:
+Estructura con Flexbox (clases de Bootstrap):
+
+El div principal está dividido en dos columnas usando el sistema de rejilla de Bootstrap.
+col-md-2: Menú lateral que ocupa el 20% del ancho (en pantallas medianas o mayores).
+col-md-10: Contenido principal que ocupa el resto del ancho.
+Enlaces dinámicos con Django:
+
+Las rutas como href="{% url 'ruta_pdf' %}" generan URLs dinámicas según las vistas y nombres de ruta configurados en urls.py.
+DataTables:
+
+La tabla incluye un identificador id="documentTable", que se inicializa con jQuery.
+Estilo responsivo:
+
+Gracias a Bootstrap, el diseño se adapta automáticamente en pantallas más pequeñas.
+
+
+-----------------------------------------------------------------------------------
+CSS Opcional (si necesitas personalización adicional):
+
+nav {
+    background-color: #333;
+    color: white;
+    min-height: 100vh;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+} -->

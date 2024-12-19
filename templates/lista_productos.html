@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+Listado Productos
+{% endblock %}
+{% block main %}
+    <h4>Agregar nuevo producto</h4><a href="/intel/nuevo-producto" class="btn btn-outline-info">Crear</a>
+    <p>{% for producto in productos %}</p>
+        <div class="card" style="width: 18rem;">
+            <img src="https://sinpar.com.ar/intel/uploads/2022/07/screenshot-1.png" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{producto.name}}</h5>
+            <p class="card-text">Precio: ${{producto.price}} </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            
+            {%if producto.stock == True%}
+                <p>Hay disponibilidad</p>
+            {%else%}
+                <p>SIN STOCK</p>
+            {%endif%}
+        </div>
+            
+        </div>
+            
+        
+        {% endfor %}
+        <p><strong>Cantidad de productos:{{cantidad}}</strong></p>
+        <br><br><br><br><br><br>
+{% endblock %}
